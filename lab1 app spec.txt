@@ -1,0 +1,25 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: anilbronson-localstorage
+    match:
+      authority:
+        exact: ""
+      path:
+        prefix: /COMP4537/labs/1
+name: anilbronson
+region: tor
+static_sites:
+- environment_slug: html
+  github:
+    branch: master
+    deploy_on_push: true
+    repo: Anil-Bronson/COMP4537-LocalStorage
+  name: anilbronson-localstorage
+  output_dir: .
+  source_dir: /COMP4537/labs/1/
